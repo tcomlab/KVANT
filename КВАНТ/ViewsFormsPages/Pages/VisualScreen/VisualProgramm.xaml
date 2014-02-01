@@ -1,0 +1,117 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:dxga="http://schemas.devexpress.com/winfx/2008/xaml/gauges"
+             xmlns:controls="clr-namespace:КВАНТ.ViewsFormsPages.Pages.VisualScreen.Controls"
+             x:Class="КВАНТ.ViewsFormsPages.Pages.VisualScreen.VisualProgramm"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600">
+    <UserControl.Resources>
+        <Style x:Key="VisualProgStyleMenu" TargetType="controls:Menuelement">
+            <Setter Property="Background" Value="Beige"/>
+
+        </Style>
+    </UserControl.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid  Height="Auto" Width="Auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Column="0">
+                <!-- Тут нужно разобратся с анимациями
+                <StackPanel.Triggers>
+                    <EventTrigger RoutedEvent="Expander.Expanded" SourceName="expander">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation From="0" To="1" Duration="0:0:0.25" Storyboard.TargetName="listBox" Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(ScaleTransform.ScaleY)"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+                </StackPanel.Triggers>
+                -->
+                <Expander  Name ="MyExpanderOpensUp" ExpandDirection="Right" HorizontalContentAlignment="Stretch" UseLayoutRounding="False" Height="535">
+                    <Expander.Content>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,0,0,-45">
+                            <Grid Width="120">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="30"/>
+                                </Grid.RowDefinitions>
+
+                                <controls:Menuelement Grid.Row="0" BlockType="DI" MouseDown="UIElement_OnMouseDown" textBlockLabel="Модуль входов" Style="{DynamicResource VisualProgStyleMenu}"/>
+                                <controls:Menuelement Grid.Row="1" BlockType="DO"  MouseDown="UIElement_OnMouseDown" textBlockLabel="Модуль выходов" Style="{DynamicResource VisualProgStyleMenu}"/>
+                                <controls:Menuelement Grid.Row="2" BlockType="EN" MouseDown="UIElement_OnMouseDown" textBlockLabel="Модуль энкодера" Style="{DynamicResource VisualProgStyleMenu}" />
+                                <controls:Menuelement Grid.Row="3" BlockType="DT" MouseDown="UIElement_OnMouseDown" textBlockLabel="Цифровые термодатчики" Style="{DynamicResource VisualProgStyleMenu}"/>
+                                <controls:Menuelement Grid.Row="4" BlockType="AI" MouseDown="UIElement_OnMouseDown" textBlockLabel="Аналоговый модуль" Style="{DynamicResource VisualProgStyleMenu}"/>
+                                <controls:Menuelement Grid.Row="5" BlockType="BT" MouseDown="UIElement_OnMouseDown" textBlockLabel="Кнопка" Style="{DynamicResource VisualProgStyleMenu}"/>
+                                <controls:Menuelement Grid.Row="6" BlockType="TI" MouseDown="UIElement_OnMouseDown" textBlockLabel="Таймер" Style="{DynamicResource VisualProgStyleMenu}"/>
+                                <controls:Menuelement Grid.Row="7" BlockType="RT" MouseDown="UIElement_OnMouseDown" textBlockLabel="Часы реального времени" Style="{DynamicResource VisualProgStyleMenu}"/>
+                                <controls:Menuelement Grid.Row="8" BlockType="II" MouseDown="UIElement_OnMouseDown" textBlockLabel="Индикатор" Style="{DynamicResource VisualProgStyleMenu}" />
+                                <CheckBox Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Радактировать все" Click="EditAll"/>
+                            </Grid>
+                        </ScrollViewer>
+                    </Expander.Content>
+                </Expander>
+            </StackPanel>
+
+            <Grid Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" AllowDrop="True" Height="Auto" Width="Auto"  Name="RootStackPanel" Drop="RootStackPanel_OnDrop"  MouseMove="RootStackPanel_OnMouseMove" Background="Transparent">
+                <!-- <mui:ModernTab SelectedSource="Controls/Screen.xaml" Layout="Tab">
+                    <mui:ModernTab.Links >
+                        <mui:Link DisplayName="Экран 1" Source="Controls/Screen.xaml" />
+                        <mui:Link DisplayName="Экран 2" Source="Controls/Screen.xaml" />
+                        <mui:Link DisplayName="Экран 3" Source="Controls/Screen.xaml" />
+                        </mui:ModernTab.Links>
+                </mui:ModernTab> -->
+                <!--
+                <Label x:Name="PositionLabel" Content="Label" HorizontalAlignment="Left" Margin="50,401,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="LabelZones" Content="Label" HorizontalAlignment="Left" Margin="50,362,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.429,1.875"/>
+                <Label x:Name="LabelMargin" Content="Label" HorizontalAlignment="Left" Margin="50,441,0,0" VerticalAlignment="Top"/>
+            -->
+            </Grid>
+
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0">
+
+                <Expander  ExpandDirection="Up" Header="Программа" HorizontalContentAlignment="Stretch" UseLayoutRounding="False"  Collapsed="Expander_Collapsed">
+                    <Grid Height="200">
+                        <ScrollViewer>
+                            <Frame x:Name="Frame1" Height="Auto" Width="Auto" Source="/ViewsFormsPages/Pages/LogicProgram/LogicalProgram.xaml" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="True" />
+                        </ScrollViewer>
+                    </Grid>
+                </Expander>
+
+            </StackPanel>
+
+            <Label Content="Элементы" HorizontalAlignment="Left" Margin="-21,54,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="67" Grid.ColumnSpan="2">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+
+        </Grid>
+    </ScrollViewer>
+</UserControl>

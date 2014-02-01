@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="КВАНТ.ViewsFormsPages.Pages.HWConfig.Controls.BusControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cconvert="clr-namespace:КВАНТ.CustomConverters"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="300">
+	
+    <UserControl.Resources>
+        <cconvert:ColorStringConverterBrush x:Key="ColorConverter" />
+
+    </UserControl.Resources>
+    
+    <Grid Height="30" VerticalAlignment="Top">
+        <Grid.ContextMenu>
+            <ContextMenu>
+                <ContextMenu.ItemsSource>
+                    <CompositeCollection>
+                        <MenuItem Name="InserModule" Header="Добавить модуль" Click="AddModule" />
+                        <MenuItem Name="Move" Header="Переместить" IsCheckable="True" Click="IsMoved" />
+                        <MenuItem Name="EditBus" Header="Редактировать" Click="Edit"/>
+                        <MenuItem Name="Delete" Header="Удалить" Click="Remove"/>
+                    </CompositeCollection>
+                </ContextMenu.ItemsSource>
+            </ContextMenu>
+        </Grid.ContextMenu>
+        <Image     Name="LabelImage" Height="20" Width="20" Margin="0,-10,190,20" Source="move.png" MouseUp="UIElement_OnMouseUp" MouseDown="UIElement_OnMouseDown" Visibility="Hidden" Panel.ZIndex="1000"/>
+        <TextBlock Name="NameBind" VerticalAlignment="Top" Height="14" TextAlignment="Center" Text="{Binding Name,Mode=OneWay}" />
+        <Rectangle Name="RectangleBody" Height="14" VerticalAlignment="Bottom"  Fill="{Binding Color,Converter={StaticResource ColorConverter},Mode=OneWay}"/>
+    </Grid>
+</UserControl>

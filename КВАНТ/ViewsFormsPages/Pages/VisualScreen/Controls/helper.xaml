@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="КВАНТ.ViewsFormsPages.Pages.VisualScreen.Controls.Helper"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="8" d:DesignWidth="100">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Image.Style>
+                <Style TargetType="Image">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=Blink}" Value="False">
+                            <Setter Property="Source" Value="Image/GreenLed.png"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=Blink}" Value="True">
+                            <Setter Property="Source" Value="Image/RedLed.png"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
+        <TextBlock Grid.Column="0" TextAlignment="Center" Name="TextBlock" Text="{Binding Path=CaptionText}" FontSize="6"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
+    </Grid>
+</UserControl>

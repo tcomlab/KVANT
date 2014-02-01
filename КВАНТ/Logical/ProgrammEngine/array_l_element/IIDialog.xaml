@@ -1,0 +1,44 @@
+﻿<Window x:Class="КВАНТ.Logical.ProgrammEngine.array_l_element.IiDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:cc="clr-namespace:КВАНТ.CustomConverters"
+             mc:Ignorable="d" Title="Индикатор" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" Width="320" Height="231.333">
+
+    <Window.Resources>
+        <cc:ColorStringConverter x:Key="Converter" />
+    </Window.Resources>
+
+    <Grid Margin="5">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="35"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="35"/>
+			<RowDefinition Height="30"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="80"/>
+			<ColumnDefinition Width="100"/>
+			<ColumnDefinition Width="120"/>
+		</Grid.ColumnDefinitions>
+    	<TextBlock Grid.Row="0" Grid.Column="0" Text="Имя" TextAlignment="Left" FontWeight="Bold" FontSize="12" VerticalAlignment="Center"/>
+        <TextBlock  Grid.Row="0" Grid.Column="2" Text="" TextAlignment="Left" Margin="10,0,10,0" FontWeight="Bold" FontSize="12" VerticalAlignment="Center"/>
+        <TextBox  Grid.Row="0" Grid.Column="1" FontSize="12" Text="{Binding Path=Name,Mode=TwoWay}" Margin="10,0,10,0" VerticalAlignment="Center" />
+		<TextBlock Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" Text="Надпись при выключено" TextAlignment="Left" Margin="10,0,10,0" FontWeight="Bold" FontSize="12" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0" FontSize="12" Text="{Binding Path=Text[0],Mode=TwoWay}" Margin="10,0,10,0" VerticalAlignment="Center" />
+		
+		<TextBlock Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="0" Text="Надпись при включено" TextAlignment="Left" Margin="10,0,10,0" FontWeight="Bold" FontSize="12" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="0" FontSize="12" Text="{Binding Path=Text[1],Mode=TwoWay}" Margin="10,0,10,0" VerticalAlignment="Center" />
+
+        <xctk:ColorPicker  Grid.Column="2" Grid.Row="2"  SelectedColor="{Binding Path=Color[1],Converter={StaticResource Converter},Mode=TwoWay}" Margin="5" />
+        <xctk:ColorPicker  Grid.Column="2" Grid.Row="4"  SelectedColor="{Binding Path=Color[0],Converter={StaticResource Converter},Mode=TwoWay}" Margin="5" />
+
+        <Button Content="Сохранить" Grid.Column="1" HorizontalAlignment="Left" Margin="43.5,5,0,0" Grid.Row="5" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Click="OnClickSave"/>
+        <Button Content="Отмена" Grid.Column="2" HorizontalAlignment="Left" Margin="40,4.373,0,0" Grid.Row="5" VerticalAlignment="Top" Width="75"  Click="OnClickCancel"/>
+
+	</Grid>
+</Window>

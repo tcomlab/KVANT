@@ -1,0 +1,79 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:controls="clr-namespace:КВАНТ.ViewsFormsPages.Pages.LogicProgram.Controls"
+             x:Class="КВАНТ.ViewsFormsPages.Pages.LogicProgram.LogicalProgram"
+             Height="806" Width="1431" 
+             VerticalContentAlignment="Top"
+             HorizontalContentAlignment="Left"
+    >
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="RootGrid"  ShowGridLines="true" Background="Transparent" AllowDrop="True" VerticalAlignment="Top" HorizontalAlignment="Left">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+
+            </Grid.ColumnDefinitions>
+         <!--   
+            <Image Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Width="10" Source="{Binding ImageSource, Source={StaticResource Row0}}" />
+            <Image Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Width="10" Source="{Binding ImageSource, Source={StaticResource Row0}}" />
+            <Image Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" Width="10" Source="{Binding ImageSource, Source={StaticResource Row0}}" />
+            <Image Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" Width="10" Source="{Binding ImageSource, Source={StaticResource Row0}}" />
+            <Image Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" Width="10" Source="{Binding ImageSource, Source={StaticResource Row0}}" />
+            <Image Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" Width="10" Source="{Binding ImageSource, Source={StaticResource Row0}}" />
+            <Image Grid.Column="0" Grid.Row="7" HorizontalAlignment="Left" Width="10" Source="{Binding ImageSource, Source={StaticResource Row0}}" />
+            <Image Grid.Column="0" Grid.Row="8" HorizontalAlignment="Left" Width="10" Source="{Binding ImageSource, Source={StaticResource Row0}}" />
+            <Image Grid.Column="0" Grid.Row="9" HorizontalAlignment="Left" Width="10" Source="{Binding ImageSource, Source={StaticResource Row0}}" />
+            <Image Grid.Column="0" Grid.Row="10" HorizontalAlignment="Left" Width="10" Source="{Binding ImageSource, Source={StaticResource Row0}}" />
+          -->
+            <controls:ProgramBlock FillColor="SkyBlue" Grid.Column="1"  Grid.Row="0" MouseDown="click_drop" Type="DI" StickText="DI" BlockText="Модуль входов" AllowDrop="true" Margin="2"/>
+            <controls:ProgramBlock FillColor="SkyBlue" Grid.Column="2"  Grid.Row="0" MouseDown="click_drop" Type="DO" StickText="DO" BlockText="Модуль выходов" AllowDrop="true" Margin="2"/>
+            <controls:ProgramBlock FillColor="SkyBlue" Grid.Column="3"  Grid.Row="0" MouseDown="click_drop" Type="EN" StickText="EN" BlockText="Энкодер" AllowDrop="true" Margin="2"/>
+            <controls:ProgramBlock FillColor="SkyBlue" Grid.Column="4"  Grid.Row="0" MouseDown="click_drop" Type="DT" StickText="DT" BlockText="Датчик температуры" AllowDrop="true" Margin="2"/>
+            <controls:ProgramBlock FillColor="SkyBlue" Grid.Column="5"  Grid.Row="0" MouseDown="click_drop" Type="AI" StickText="AI" BlockText="Аналоговый вход" AllowDrop="true" Margin="2"/>
+            <controls:ProgramBlock FillColor="SkyBlue" Grid.Column="6"  Grid.Row="0" MouseDown="click_drop" Type="BT" StickText="BT" BlockText="Кнопка" AllowDrop="true" Margin="2"/>
+            <controls:ProgramBlock FillColor="SkyBlue" Grid.Column="7"  Grid.Row="0" MouseDown="click_drop" Type="TI" StickText="TI" BlockText="Таймер" AllowDrop="true" Margin="2"/>
+            <controls:ProgramBlock FillColor="SkyBlue" Grid.Column="8"  Grid.Row="0" MouseDown="click_drop" Type="RT" StickText="RT" BlockText="Часы" AllowDrop="true" Margin="2"/>
+            <controls:ProgramBlock FillColor="SkyBlue" Grid.Column="9"  Grid.Row="0" MouseDown="click_drop" Type="II" StickText="II" BlockText="Индикатор" AllowDrop="true" Margin="2"/>
+            <controls:ProgramBlock FillColor="SkyBlue" Grid.Column="10" Grid.Row="0" MouseDown="click_drop" Type="KG" StickText="KG" BlockText="Контакт" AllowDrop="true" Margin="2"/>
+            <controls:ProgramBlock FillColor="SkyBlue" Grid.Column="11" Grid.Row="0" MouseDown="click_drop" Type="MR" StickText="MR" BlockText="Ячейка читающая" AllowDrop="true" Margin="2"/>
+            <controls:ProgramBlock FillColor="SkyBlue" Grid.Column="12" Grid.Row="0" MouseDown="click_drop" Type="MW" StickText="MW" BlockText="Ячейка записывающая" AllowDrop="true" Margin="2"/>
+
+            <Grid Background="Transparent" x:Name="ElementGrid" Grid.Column="1" Grid.ColumnSpan="500"  Grid.RowSpan="500" Grid.Row="1" Height="Auto" Width="Auto" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

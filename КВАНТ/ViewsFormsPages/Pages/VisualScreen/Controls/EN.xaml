@@ -1,0 +1,47 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="clr-namespace:КВАНТ.ViewsFormsPages.Pages.VisualScreen.Controls"
+             xmlns:ig="http://schemas.infragistics.com/xaml" x:Class="КВАНТ.ViewsFormsPages.Pages.VisualScreen.Controls.EN"
+             mc:Ignorable="d" 
+             d:DesignHeight="80" d:DesignWidth="400" x:Name="DtControl"
+            
+             >
+
+    <UserControl.ContextMenu>
+        <ContextMenu>
+            <ContextMenu.ItemsSource>
+                <CompositeCollection>
+                    <MenuItem Header="Переместить" Click="MenuItem_Click_Move" IsCheckable="true"  Name="MenuItem1"/>
+                    <MenuItem Header="Редактировать" Click="MenuItem_Click_Edit" />
+                    <MenuItem Header="Удалить" Click="MenuItem_Click_Remove" />
+                </CompositeCollection>
+            </ContextMenu.ItemsSource>
+        </ContextMenu>
+    </UserControl.ContextMenu>
+
+    <Grid Height="80" Width="260" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+        <controls:Helper Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" VerticalAlignment="Top" Margin="0,5,0,0" Height="10" x:Name="Helper1" Panel.ZIndex="1" />
+        <Button Grid.Row="1" Grid.Column="2" Margin="0,10,0,10"  Panel.ZIndex="100" Click="ClickButton" Name="Button1"/>
+        <Image  x:Name="LabelImage"  HorizontalAlignment="Left" Height="29" Width="38" Margin="-13,-13,0,0" Panel.ZIndex="100" VerticalAlignment="Top"  Source="Image/move.png" Visibility="Hidden" RenderTransformOrigin="1.6,0.752" Grid.ColumnSpan="2" Grid.RowSpan="2" MouseDown="LabelImage_OnMouseDown" MouseUp="LabelImage_OnMouseUp"/>
+        <Rectangle RadiusX="5" RadiusY="5" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="3" Stroke="#FF0A0909" StrokeThickness="4" Panel.ZIndex="1" Fill="Transparent"/>
+        <ig:XamSegmentedDisplay Grid.Column="1" Grid.Row="1" Margin="5"  Background="White" ClipToBounds="True" TextForeground="#FF040404" Digits="6" Text="{Binding Path=CurrentValueSInt,Mode=OneWay}"/>
+        <ig:XamSegmentedDisplay Grid.Column="3" Grid.Row="1" Margin="5"  Background="White" ClipToBounds="True" TextForeground="#FF040404" Digits="6" Text="{Binding Path=DoubleData[0],Mode=OneWay}"/>
+        
+    </Grid>
+</UserControl>

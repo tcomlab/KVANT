@@ -1,0 +1,26 @@
+﻿<Window x:Class="КВАНТ.ViewsFormsPages.Pages.VisualScreen.Controls.SelectNameDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" Title="Имя блока" Height="148" Width="204">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="90"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Margin="5" Text="Имя узла"/>
+        <ComboBox Grid.Row="1" x:Name="ListBoxNames" Grid.ColumnSpan="2" Grid.Column="0" Margin="5"/>
+        <Button Content="Отмена" Grid.Column="0" Margin="5" Grid.Row="2" Width="80" Click="OnCancel"/>
+        <Button Content="Сохранить"  Grid.Column="1" Margin="5" Grid.Row="2" Width="80" Click="OnSave"/>
+
+    </Grid>
+</Window>
